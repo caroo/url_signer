@@ -5,7 +5,7 @@ require 'digest/sha1'
 
 class UrlSigner
   
-  VERSION = "0.2.0"
+  VERSION = "0.2.1"
   
   DEFAULT_HASH_LENGTH = 10
   DEFAULT_SEPARATOR = "_"

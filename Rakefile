@@ -4,8 +4,10 @@ require File.dirname(__FILE__) + '/lib/url_signer'
 $hoe = Hoe.new('url_signer', UrlSigner::VERSION) do |p|
   p.developer('Caroo GmbH', 'dev@pkw.de')
   p.changes              = p.paragraphs_of("History.txt", 0..1).join("\n\n")
+  p.extra_deps = [
+    ['activesupport']
+  ]
   p.extra_dev_deps = [
-    ['activesupport'],
     ['newgem', ">= #{::Newgem::VERSION}"]
   ]
   p.summary = "UrlSigner is a class to cryptographically sign URLs."
