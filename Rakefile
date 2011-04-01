@@ -1,11 +1,14 @@
-%w[rubygems rake rake/clean fileutils newgem rubigen].each { |f| require f }
+%w[hoe rubygems rake rake/clean fileutils newgem rubigen].each { |f| require f }
 require File.dirname(__FILE__) + '/lib/url_signer'
 
-$hoe = Hoe.new('url_signer', UrlSigner::VERSION) do |p|
+Hoe.plugin :newgem
+Hoe.plugins.delete :rubyforge
+Hoe.plugins.delete :test
+$hoe = Hoe.spec('url_signer') do |p|
   p.developer('Caroo GmbH', 'dev@pkw.de')
   p.changes              = p.paragraphs_of("History.txt", 0..1).join("\n\n")
   p.extra_deps = [
-    ['activesupport']
+    ['activesupport', '~>2.3.10']
   ]
   p.extra_dev_deps = [
     ['newgem', ">= #{::Newgem::VERSION}"]
