@@ -69,7 +69,7 @@ class TestUrlSigner < Test::Unit::TestCase
   def test_should_be_able_to_set_separator_in_initializer
     url_signer = UrlSigner.new("secret", :separator => "~")
     url = "http://images.pkw.de/audi_gebrauchtwagen_300.jpg"
-    assert_match /http\:\/\/images\.pkw\.de\/audi_gebrauchtwagen_300\~.{#{UrlSigner::DEFAULT_HASH_LENGTH}}\.jpg/, url_signer.sign(url)
+    assert_match(/http\:\/\/images\.pkw\.de\/audi_gebrauchtwagen_300\~.{#{UrlSigner::DEFAULT_HASH_LENGTH}}\.jpg/, url_signer.sign(url))
   end
   
 end
