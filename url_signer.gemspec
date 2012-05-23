@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = ""
   s.summary     = %q{UrlSigner is a class to cryptographically sign URLs.}
   s.description = %q{The UrlSigner class was designed to create tamper-proof URLs, that can only be generated and validated by parties that know the shared secret.}
-  s.add_dependency "activesupport", ">= 2.3.10"
+  s.add_dependency "activesupport"
   s.add_development_dependency "rake"
   s.add_development_dependency "test-unit", ">= 2.0.9"
 
